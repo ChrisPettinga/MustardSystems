@@ -3,16 +3,13 @@ from collections import defaultdict
 from itertools import groupby
 
 def solution(N, S):
-	free_count = 0  # Number of free, 3-consecutive seats for families
-
-	seat_matrix = defaultdict(list)
-	seat_letters = list(string.ascii_uppercase)
-	seat_letters.remove('I')
-
 	# This edge case can be handled better
 	if not S:
 		return N * 3
 
+	free_count = 0  # Number of free, 3-consecutive seats for families
+	seat_letters = list(string.ascii_uppercase)
+	seat_letters.remove('I')
 	taken_seats = S.split(' ')
 
 	# A list of dictionaries to represent each row in the airplane

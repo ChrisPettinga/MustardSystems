@@ -25,10 +25,8 @@ def solution(N, S):
 	for taken_seat in taken_seats:
 		column = taken_seat[-1] # Seat letter will always be the last character in the string
 		row = taken_seat[:len(taken_seat) - 1] # Row number will be whatever is left
-		try:
-			seat_matrix[int(row) - 1][column] = False # Setting the relevant element in matrix as False (taken)
-		except IndexError:
-			print('asd')
+		seat_matrix[int(row) - 1][column] = False # Setting the relevant element in matrix as False (taken)
+
 	for row in seat_matrix:
 		# Ideally this 'segmentation' of rows would be handled above when the initial matrix is created
 		segmented_rows = [
